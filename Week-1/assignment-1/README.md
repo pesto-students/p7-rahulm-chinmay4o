@@ -78,6 +78,6 @@ Now that you know how the server builds the response to send back to the browser
 
 
 ## 6. Browser renders the content
-Once the browser has received the response from the server, it inspects the response headers for information on how to render the resource. The Content-Type header above tells the browser it received an HTML resource in the response body. Lucky for us, the browser knows what to do with HTML!
+Once the browser has received the response from the server, it inspects the response headers for information on how to render the resource. The Content-Type header above tells the browser it received an HTML resource in the response body. The browser knows what to do with HTML!
 The first GET request returns HTML, the structure of the page. But if you inspect the HTML of the page (or any web page) with your browser’s dev tools, you’ll see it references other Javascript, CSS, image resources and requests additional data in order to render the web page as designed.
 As the browser is parsing and rendering the HTML, it is making additional requests to get Javascript, CSS, images, and data
