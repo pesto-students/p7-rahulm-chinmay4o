@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,7 +18,9 @@
                 <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit architecto
                     voluptatibus laboriosam</p>
 
-  
+            </div>
+        </div>
+    </main>
 </body>
 
 </html>
