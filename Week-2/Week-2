@@ -1,1 +1,25 @@
 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="This page is related to Mystay hotels">
+    <link rel="stylesheet" href="./scss/style.css">
+    <title>Mystay hotels</title>
+</head>
+
+<body>
+    <main class="parent-container">
+        <div class="layout-container">
+            <div class="hero-container">
+                <h1>Mystay Homes</h1>
+                <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit architecto
+                    voluptatibus laboriosam</p>
+
+  
+</body>
+
+</html>
