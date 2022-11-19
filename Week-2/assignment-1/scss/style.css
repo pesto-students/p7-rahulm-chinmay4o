@@ -1,10 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;700&display=swap");
-
 /* ======== reset ======= */
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 html {
@@ -16,28 +16,18 @@ body {
   overflow-x: hidden;
 }
 
-// variables
-$text-color: #fff5e6;
-$base-color: #f7f7f7;
-
 /* ============ parent & layout ============ */
 .parent-container {
   width: 100vw;
   min-height: 100vh;
-  background-color: $base-color;
+  background-color: #f7f7f7;
   overflow-x: hidden;
-
-  .layout-container {
-    width: 1440px;
-    margin: 0px auto;
-    background-color: $base-color;
-    overflow-x: hidden;
-  }
 }
 
-// ====== Mixins =======
-@mixin container-base {
-  width: 1250px;
+.parent-container .layout-container {
+  width: 1440px;
   margin: 0px auto;
-  padding: 40px 0;
+  background-color: #f7f7f7;
+  overflow-x: hidden;
 }
+/*# sourceMappingURL=style.css.map */
