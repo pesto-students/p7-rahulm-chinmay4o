@@ -1,16 +1,14 @@
-// var name1 = "chinmay";
+const printName = {
+    firstName : "John",
+    getName () {
+        console.log(`this is ${this.firstName}`)
+    }
+}
+  
+const obj1 = {
+    firstName : "David",
+}
 
-function getName(a, b) {
-    let name1 = "chinmay";
-  
-    console.log(`${this.name1} lives in Mumbai and his age is ${a + b}`);
-    return `${this.name1} lives in Mumbai and his age is ${a + b}`;
-  }
-  
-  let obj = {
-    name1: "David",
-  };
-  
-  // getName(10, 20);
-  getName.call(obj, 10, 20); // call takes second param as list of args
-  
+printName.getName();
+
+printName.getName.call(obj1);
