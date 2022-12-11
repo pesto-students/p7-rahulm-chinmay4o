@@ -1,21 +1,22 @@
-var Person = function () {};
+const Person = function () {};
+const Teacher = function() {
+  // Person.call(this, nameA, age);
+};
 
-Person.prototype.initialize = function (name, age) {
-  this.name = name;
+Person.prototype.initialize = function (nameA, age) {
+  this.nameA = nameA;
   this.age = age;
 };
 
-Person.prototype.teach = function (subject) {
+Teacher.prototype.teach = function (subject) {
   this.subject = subject;
-
-  console.log(`${this.name} is teaching ${this.subject}`);
-  return this;
+  console.log(`${this.nameA} is teaching ${this.subject}`);
 };
 
-var teacher = new Person();
+Object.setPrototypeOf(Teacher.prototype, Person.prototype);
 
-console.log(teacher);
+const him = new Teacher();
 
-teacher.initialize("Adam", 45);
+him.initialize("Adam", 45);
 
-teacher.teach("Inheritance");
+him.teach("Inheritance");
