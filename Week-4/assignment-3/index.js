@@ -5,7 +5,7 @@ const fib = {
     let newVal = 0;
     return {
       next() {
-        let temp = oldVal;
+        const temp = oldVal;
         oldVal = newVal;
         newVal = temp + newVal === 0 ? 1 : temp + newVal;
         return {
