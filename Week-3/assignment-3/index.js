@@ -25,4 +25,5 @@ function createIncrement() {
   // In the above example the function is being called at line number 19 where,
   // "count is 0" string is already created. Now after incrementing the count there
   // is no such function which updates the message and count inside thats why the count is printed as 0
+
   
