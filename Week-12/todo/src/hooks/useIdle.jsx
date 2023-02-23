@@ -11,7 +11,6 @@ const useIdle = () => {
   }
 
   useEffect(() => {
-    // function addEvents() {
       setNewTimeout();
 
       function handler() {
@@ -20,10 +19,11 @@ const useIdle = () => {
         setIsIdle(false);
       }
 
-      window.addEventListener("keydown", handler);
+      document.addEventListener("keydown", handler);
+      document.addEventListener("mousemove", handler);
 
-    // }
-    // addEvents();
+      //edge cases
+      // window.addEventListener("onblur", )
 
     return () => {
         window.removeEventListener("keydown", handler);
