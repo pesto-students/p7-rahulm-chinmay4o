@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import usePrevious from "../hooks/usePrevious";
 import useIdle from "../hooks/useIdle";
 
-const Home = () => {
+const Hooks = () => {
   const [count, setCount] = useState(1);
   const prev = usePrevious(count);
   const [isIdle] = useIdle();
@@ -29,4 +29,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Hooks;

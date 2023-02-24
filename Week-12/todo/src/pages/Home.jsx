@@ -1,11 +1,21 @@
-import React from 'react'
+import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
-  return (
-    <div className="">
-     <h1 className="text-[30px] font-[700]">Home to record your notes</h1>
-     </div>
-  )
-}
+  const navigate = useNavigate();
 
-export default Home
+  return (
+    <div className="grid h-[500px] place-items-center">
+      <h1 className="text-[30px] font-[700]">Home to record your notes</h1>
+
+      <button
+        onClick={() => navigate("/todo")}
+        className="w-[200px] rounded-md bg-primary text-white p-[10px_20px] text-medium font-semibold"
+      >
+        Create to-do
+      </button>
+    </div>
+  );
+};
+
+export default Home;
