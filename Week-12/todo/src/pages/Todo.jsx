@@ -195,7 +195,22 @@ const Todo = () => {
                   );
                 })}
               </ul>
-             
+              {/* color grid */}
+              <div className="w-[90px] color_pallete grid grid-cols-3 my-[20px]">
+                {bgColor.map((color, index) => {
+                  return (
+                    <div
+                      className={{
+                        backgroundColor: color,
+                        width: "20px",
+                        height: "20px",
+                        borderRadius: "50%",
+                      }}
+                      key={index}
+                    ></div>
+                  );
+                })}
+              </div>
             </div>
           );
         })}
