@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
 import todoListData from "../mock_data/data";
-import Tooltip from "../components/tooltip/Tooltip";
 
 const Todo = () => {
   const bgColor = [
@@ -44,9 +43,16 @@ const Todo = () => {
         addItemToListHandler();
       }
     };
-    document.addEventListener("keydown", keyHandler);
-    return () => document.removeEventListener("keydown", keyHandler);
+    itemRef.current?.addEventListener("keydown", keyHandler);
+    return () => itemRef.current?.removeEventListener("keydown", keyHandler);
   });
+
+  // shifting focus to the next input
+  const handleKeyDown = (event, ref) => {
+    if (event.keyCode === 13) {
+      ref.current.focus();
+    }
+  };
 
   function addItemToListHandler() {
     if (itemRef.current.value) {
@@ -108,6 +114,7 @@ const Todo = () => {
                 id="title"
                 type="text"
                 placeholder="Title"
+                onKeyDown={(e) => handleKeyDown(e, itemRef)}
                 onChange={(e) => {
                   setTodoList({
                     _id: todoList._id,
