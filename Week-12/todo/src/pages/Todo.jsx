@@ -71,10 +71,10 @@ const Todo = () => {
   function addTodoHandler() {
     if (todoList.items.length > 0) {
       setData([
-        ...data,
         {
           ...todoList,
         },
+        ...data
       ]);
       titleRef.current.value = "";
     }
@@ -91,7 +91,7 @@ const Todo = () => {
       {!showInput ? (
         <div className="input_wrapper h-[105px] border-b-[0px] border-[#e7e7e7] border-solid mt-[20px] grid place-items-center">
           <input
-            className="shadow-[0_5px_10px_5px_rgba(0,0,4,0.1)] border-0 rounded-[10px] py-[13px] px-[15px] text-gray-700 font-[600] text-base leading-tight focus:outline-none focus:shadow-outline w-[570px]"
+            className="shadow-[0px_1px_10px_5px_rgba(0,0,4,0.15)] border-0 rounded-[10px] py-[13px] px-[15px] text-gray-700 font-[600] text-base leading-tight focus:outline-none focus:shadow-outline w-[570px]"
             id="text"
             type="text"
             placeholder="Create a todo..."
@@ -105,7 +105,7 @@ const Todo = () => {
         <div className="grid place-items-center">
           <div
             ref={wrapperRef}
-            className="py-[5px] grid grid-rows-[45px_45px_1fr_60px] w-[560px] min-h-0 overflow-hidden border-0 rounded-[8px] z-10 bg-white  mt-[30px] shadow-[0_5px_10px_5px_rgba(0,0,0,0.1)]"
+            className="py-[5px] grid grid-rows-[45px_45px_1fr_60px] w-[560px] min-h-0 overflow-hidden border-0 rounded-[8px] z-10 bg-white  mt-[30px] shadow-[0_1px_10px_5px_rgba(0,0,0,0.15)]"
           >
             <div className="grid grid-cols-[1fr_0px] border-b-[1px] border-[#cecece] ">
               <input
