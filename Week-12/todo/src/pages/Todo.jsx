@@ -2,14 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import todoListData from "../mock_data/data";
 
 const Todo = () => {
-  const bgColor = [
-    "#000",
-    "tomato",
-    "dodgerblue",
-    "#a8ff50",
-    "#61edff",
-    "#fcff4f",
-  ];
+  const bgColor = ["#FF845B", "#BEFF4E", "#4EB9FF", "#FFEC4E", "#FFFFFF"];
 
   const titleRef = useRef(null);
   const itemRef = useRef(null);
@@ -54,6 +47,13 @@ const Todo = () => {
     }
   };
 
+  // grand parent color handler
+  const parentColorHandler = (e, color) => {
+    const childNode = e.target;
+    const parentNode = childNode.parentNode.parentNode;
+    parentNode.style.backgroundColor = color;
+  };
+
   function addItemToListHandler() {
     if (itemRef.current.value) {
       setTodoList({
@@ -74,7 +74,7 @@ const Todo = () => {
         {
           ...todoList,
         },
-        ...data
+        ...data,
       ]);
       titleRef.current.value = "";
     }
@@ -183,6 +183,7 @@ const Todo = () => {
             <div
               className="w-full border-[0px] border-solid border-[rgb(218,218,218)] rounded-md py-[10px] px-[17px] shadow-[0px_0px_3px_4px_rgba(165,165,165,0.1)]"
               key={index}
+              id={ele._id}
             >
               <h5 className="text-[22px] font-semibold capitalize">
                 {ele.title}
@@ -203,17 +204,18 @@ const Todo = () => {
                 })}
               </ul>
               {/* color grid */}
-              <div className="w-[90px] color_pallete grid grid-cols-3 my-[20px]">
+              <div className="w-[140px] color_pallete grid grid-cols-5 my-[20px]">
                 {bgColor.map((color, index) => {
                   return (
                     <div
-                      className={{
+                      style={{
                         backgroundColor: color,
                         width: "20px",
                         height: "20px",
                         borderRadius: "50%",
                       }}
                       key={index}
+                      onClick={(e) => parentColorHandler(e, color)}
                     ></div>
                   );
                 })}
